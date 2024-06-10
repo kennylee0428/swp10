@@ -1,10 +1,13 @@
-from wsgiref.simple_server import make_server
-from graph import application
-
-httpd = make_server (
-    '',
-    8051,
-    application
-)
-
-httpd.serve_forever()
+html = b"""
+<html>
+    <body>
+        <form action="">
+            y = <input type="number" name="a"> * x^2
+              + <input type="number" name="b"> * x
+              + <input type="number" name="c"><br><br>
+            <input type="submit">
+        </form>
+        <img src="/graph.png" alt="Result image here">
+    </body>
+</html>
+"""
